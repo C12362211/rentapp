@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  customer_id: 1
+  game_id: 1
+  date_rented: 2015-01-27
+  date_due: 2015-01-27
+
+two:
+  customer_id: 1
+  game_id: 1
+  date_rented: 2015-01-27
+  date_due: 2015-01-27

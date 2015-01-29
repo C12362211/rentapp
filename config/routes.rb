@@ -1,11 +1,11 @@
 Rentapp::Application.routes.draw do
+  resources :customers
+
   resources :games
 
   resources :devs
 
   resources :rentals
-
-  resources :customers
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

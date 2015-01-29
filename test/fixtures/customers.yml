@@ -1,15 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  fname: MyString
-  lname: MyString
+  name: MyString
   address: MyString
   phone: 1
-  dob: 2015-01-27
+  dob: 2015-01-29
 
 two:
-  fname: MyString
-  lname: MyString
+  name: MyString
   address: MyString
   phone: 1
-  dob: 2015-01-27
+  dob: 2015-01-29

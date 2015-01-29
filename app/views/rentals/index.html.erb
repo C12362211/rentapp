@@ -13,8 +13,8 @@
 
 <% @rentals.each do |rental| %>
   <tr>
-    <td><%= rental.customer_id %></td>
-    <td><%= rental.game_id %></td>
+    <td><%= rental.customer.name %></td>
+    <td><%= rental.game.title %></td>
     <td><%= rental.date_rented %></td>
     <td><%= rental.date_due %></td>
     <td><%= link_to 'Show', rental %></td>

@@ -1,7 +1,7 @@
 Rentapp::Application.routes.draw do
-  resources :customers
-
   resources :games
+
+  resources :customers
 
   resources :devs
 

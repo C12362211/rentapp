@@ -10,6 +10,18 @@
   <%= @dev.country %>
 </p>
 
+<% if @dev.games.empty? %>
+	<p> We have no games by this developer, check back later </p>
+<% else %>
+	<p>These are the games made by this developer:</p>
+		<% @dev.games.each do |g| %>
+			<br>
+			<p><%= g.title %></p>
+			<p><%# = image_tag(m.poster, :size => "80x80" )%></p>
+		<% end %>
+		<br>
+<% end %>
+
 
 <%= link_to 'Edit', edit_dev_path(@dev) %> |
 <%= link_to 'Back', devs_path %>

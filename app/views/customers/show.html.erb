@@ -20,6 +20,18 @@
   <%= @customer.dob %>
 </p>
 
+<% if @customer.rentals.empty? %>
+	<p> We have no rentals by this customer, check back later </p>
+<% else %>
+	<p>These are the rentals of this customer:</p>
+		<% @customer.rentals.each do |r| %>
+			<br>
+			<p><%= r.game.title %></p>
+			<p><%# = image_tag(m.poster, :size => "80x80" )%></p>
+		<% end %>
+		<br>
+<% end %>
+
 
 <%= link_to 'Edit', edit_customer_path(@customer) %> |
 <%= link_to 'Back', customers_path %>

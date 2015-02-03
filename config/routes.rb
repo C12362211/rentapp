@@ -1,4 +1,6 @@
 Rentapp::Application.routes.draw do
+  resources :posts
+
   resources :games
 
   resources :customers

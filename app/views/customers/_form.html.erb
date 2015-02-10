@@ -15,6 +15,7 @@
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </div>
+  
   <div class="field">
     <%= f.label :address %><br />
     <%= f.text_field :address %>
@@ -26,6 +27,14 @@
   <div class="field">
     <%= f.label :dob %><br />
     <%= f.date_select :dob %>
+  </div>
+  <div class="field">
+    <%= f.label :password %><br />
+    <%= f.password_field :password %>
+  </div>
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation %>
   </div>
   <div class="actions">
     <%= f.submit %>

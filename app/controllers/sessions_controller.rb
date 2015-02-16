@@ -3,10 +3,10 @@ class SessionsController < ApplicationController
   end
 
   def create
-	user = User.find_by_name(params[:name])	
-   if user && user.authenticate(params[:password]) 			
-   session[:user_id] = user.id	#stores the id in the session 	
-   redirect_to user		#displays the user/show view
+	customer = Customer.find_by_name(params[:name])	
+   if customer && customer.authenticate(params[:password]) 			
+   session[:customer_id] = customer.id	#stores the id in the session 	
+   redirect_to customer		#displays the user/show view
    else  	 		
 	flash.now[:error] = "Invalid name/password combination."      	
 	render 'new'		           #shows the signin page again 
@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
 
   def destroy
 	if signed_in?
-		session[:user_id] = nil					
+		session[:customer_id] = nil					
 	else
 		flash[:notice] = "You need to sign in first"			
 	end

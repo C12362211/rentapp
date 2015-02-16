@@ -8,7 +8,6 @@
 </head>
 <body>
 <div id="banner">
-	<%= image_tag("movie_night.jpg", :size => "100x50") %>
 	<%= @page_title || "GG-NO-RE Game Rental" %>
 </div>
 <div id="nav">
@@ -20,9 +19,8 @@
 			<li><%= link_to "Sign Out", signout_path %></li>
 		<% end %>
 			
-			<li><%= link_to "Questions"%></li>
-			<li><%= link_to "Movie News", 'http://oscar.go.com/nominees' %></li>
 			<li><%= link_to "Games", games_path%></li>
+			<li><%= link_to "Rentals", rentals_path%></li>
     </ul>
 </div>
 

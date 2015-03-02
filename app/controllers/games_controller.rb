@@ -69,6 +69,16 @@ class GamesController < ApplicationController
     end
   end
 
+  def search
+	@games = Game.search params[:q]
+	unless @games.empty?
+		render 'index'
+	else
+		flash[:notice] = 'No game matches that search'
+		render 'index'
+	end
+  end
+  
   # DELETE /games/1
   # DELETE /games/1.json
   def destroy

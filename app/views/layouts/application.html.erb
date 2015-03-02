@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<%= javascript_include_tag :defaults, "rails.validations" %>
 <html>
 <head>
   <title>Rentapp</title>
@@ -18,9 +19,8 @@
 			<li>Signed in as <%= @current_user.name  %></li>
 			<li><%= link_to "Sign Out", signout_path %></li>
 		<% end %>
-			
 			<li><%= link_to "Games", games_path%></li>
-			<li><%= link_to "Rentals", rentals_path%></li>
+			
     </ul>
 </div>
 

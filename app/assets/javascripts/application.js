@@ -12,4 +12,19 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require rails.validations
 //= require_tree .
+
+function time()
+{
+var timePara = document.createElement("p");
+var tNode = document.createTextNode("");
+tNode.id = "tNode";
+	var x = new Date();
+	var nmin=x.getMinutes(),nsec=x.getSeconds();
+	if(nmin<=9) nmin="0"+nmin;
+	else if(nsec<=9) nsec="0"+nsec;
+	
+	document.getElementById('time').innerHTML=x.getHours()+":"+nmin+":"+ nsec;
+
+}

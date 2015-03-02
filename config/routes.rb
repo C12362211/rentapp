@@ -2,7 +2,7 @@ Rentapp::Application.routes.draw do
 
 	match '/signin',  :to => 'sessions#new'
 	match '/signout', :to => 'sessions#destroy'
-
+	match '/search', :to => 'games#search'
 
   get "sessions/new"
 
@@ -17,12 +17,18 @@ Rentapp::Application.routes.draw do
   resources :games do
 	resources :posts
   end
+  
+  
 
   resources :customers
 
   resources :devs
 
   resources :rentals
+  
+  resources :games do
+	resources :rentals
+  end
   
   resources :sessions
 

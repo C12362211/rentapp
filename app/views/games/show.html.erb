@@ -24,6 +24,11 @@
   <%= @game.dev.name %>
 </p>
 
+<p>
+  <b>Price to rent:</b>
+  <%= @game.price %>
+</p>
+
 <% if @game.posts.empty? %>
     <h3>You are the first  to comment </h3>
 <% else %>
@@ -42,8 +47,29 @@
 			<%= f.submit "Post a Comment"%>
 		</div>
 	<% end %>
+	
+<% if @game.rentals.empty? %>
+    <h3>No-one else has rented this title </h3>
+<% else %>
+ <h2>Other uses who have rented this game:</h2>
+  <% @game.rentals.reverse.each do |rental| %>
+	<p>
+         Rented <%= time_ago_in_words(rental.created_at) %> ago by 		<%= rental.customer.name %></p>
+   <% end %>
+<% end %>
+	
+<%= form_for([@game, Rental.new]) do |f| %>
+  <p>----------------</p>
+  <h2>Rent for 5 days:</h2>
+  <p>
+  <b>Game Will be Due on:</b>
+  <%= (Date.today + 5.days).to_formatted_s(:long)  %>
+</p>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
 
 
 
-<%= link_to 'Edit', edit_game_path(@game) %> |
 <%= link_to 'Back', games_path %>

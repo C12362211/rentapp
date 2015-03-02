@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+	before_filter :signed_in? 
   def new
   end
 
@@ -19,6 +20,6 @@ class SessionsController < ApplicationController
 	else
 		flash[:notice] = "You need to sign in first"			
 	end
-	redirect_to signin_path
+	redirect_to root_path
   end
 end

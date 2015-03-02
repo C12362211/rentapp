@@ -6,4 +6,11 @@ class Game < ActiveRecord::Base
 	validates :title, presence: true
 	validates :rating, presence: true
 	validates :dev_id, presence: true
+	
+	def self.search(search)
+		search_condition = search + "%"
+		find(:all, :conditions => ['title LIKE ?', search_condition])
+	end
+		
+		
 end

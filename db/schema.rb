@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150203154644) do
+ActiveRecord::Schema.define(:version => 20150224145940) do
 
   create_table "customers", :force => true do |t|
     t.string   "name"
@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(:version => 20150203154644) do
     t.datetime "updated_at",      :null => false
     t.string   "email"
     t.string   "password_digest"
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   create_table "devs", :force => true do |t|
@@ -39,6 +41,7 @@ ActiveRecord::Schema.define(:version => 20150203154644) do
     t.integer  "dev_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.decimal  "price"
   end
 
   create_table "posts", :force => true do |t|
@@ -56,6 +59,7 @@ ActiveRecord::Schema.define(:version => 20150203154644) do
     t.date     "date_due"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.decimal  "game_price"
   end
 
 end

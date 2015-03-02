@@ -1,4 +1,5 @@
 class CustomersController < ApplicationController
+	include CustomersHelper
   # GET /customers
   # GET /customers.json
   def index
